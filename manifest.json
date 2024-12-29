@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Table Scraper",
+  "version": "1.0",
+  "description": "Scrapes specific table data and saves as CSV",
+  "permissions": [
+    "activeTab",
+    "downloads",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_title": "Scrape Table"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+} 
